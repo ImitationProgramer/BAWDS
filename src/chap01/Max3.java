@@ -1,5 +1,6 @@
 package chap01;
 // 3개의 정숫값을 입력하고 최댓값을 구하여 출력
+
 import java.util.Scanner;
 
 public class Max3 {
@@ -14,12 +15,12 @@ public class Max3 {
         System.out.print("c의 값: ");
         int c = sc.nextInt();
         int max = a;
-        if(max < b) {
+        if (max < b) {
             max = b;
         }
-        if(max < c) {
+        if (max < c) {
             max = c;
         }
-        System.out.println("최댓값은 "+max+"입니다.");
+        System.out.println("최댓값은 " + max + "입니다.");
     }
 }
