@@ -8,6 +8,7 @@ public class Q1Q2 {
 
         private Node<E> head;       // 머리 포인터(머리 노드에 대한 참조)
         private Node<E> crnt;       // 선택 포인터(선택 노드에 대한 참조)
+
         //--- 생성자 ---//
         public LinkedList() {
             head = crnt = null;
@@ -29,7 +30,20 @@ public class Q1Q2 {
 
         //--- 머리에 노드를 삽입 ---//
         public void addFirst(E obj) {
+            Node<E> ptr = head;                     // 삽입 전의 머리 노드
+            head = crnt = new Node<E>(obj, ptr);
+        }
 
+        //--- 꼬리에 노드를 삽입 ---//
+        public void addLast(E obj) {
+            if (head == null)            // 리스트가 비어 있으면
+                addFirst(obj);          // 머리에 삽입
+            else {
+                Node<E> ptr = head;
+                while (ptr.next != null)
+                    ptr = ptr.next;
+                ptr.next = crnt = new Node<E>(obj, null);
+            }
         }
 
         //--- 노드 ---//
